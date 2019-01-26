@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="503.0" prefWidth="580.0" style="-fx-background-color: #F0FFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bozhik.design.controller.Start">
+   <children>
+      <ListView fx:id="listViewTrack" layoutX="-1.0" layoutY="27.0" prefHeight="412.0" prefWidth="595.0" style="-fx-border-color: #FFFFFF;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0" />
+      <Button layoutX="14.0" layoutY="440.0" mnemonicParsing="false" onAction="#clickOpen" prefHeight="56.0" prefWidth="67.0" style="-fx-background-color: #00EE76;" text="+" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0">
+         <font>
+            <Font size="26.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button layoutX="499.0" layoutY="439.0" mnemonicParsing="false" onAction="#removeTrack" prefHeight="56.0" prefWidth="67.0" style="-fx-background-color: #EE3B3B;" text="-" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="14.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="progressIndicator" layoutX="90.0" layoutY="442.0" prefHeight="18.0" prefWidth="399.0" progress="0.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="91.0" />
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="-3.0" layoutY="425.0" prefHeight="17.0" prefWidth="580.0" textAlignment="CENTER" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="3.0" />
+      <StackPane layoutX="255.0" layoutY="460.0" prefHeight="44.0" prefWidth="44.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="255.0" AnchorPane.rightAnchor="298.0">
+         <children>
+            <ImageView fx:id="playButton" fitHeight="41.0" fitWidth="39.0" onMouseClicked="#play" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/controls_play_32.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="stopButton" fitHeight="46.0" fitWidth="44.0" onMouseClicked="#pause" pickOnBounds="true" preserveRatio="true" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <image>
+                  <Image url="@../image/playback_pause.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="289.0" layoutY="460.0" prefHeight="44.0" prefWidth="53.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="289.0" AnchorPane.rightAnchor="255.0">
+         <children>
+            <ImageView fitHeight="46.0" fitWidth="44.0" onMouseClicked="#stop" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/playback_stop.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </StackPane>
+      <TextField fx:id="session" editable="false" layoutY="-2.0" prefHeight="29.0" prefWidth="597.0" style="-fx-background-color: #FFFFFF;" text="Session : " AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0" />
+   </children>
+</AnchorPane>
