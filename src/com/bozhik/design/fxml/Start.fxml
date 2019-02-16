@@ -8,33 +8,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="503.0" prefWidth="580.0" style="-fx-background-color: #F0FFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bozhik.design.controller.Start">
+<AnchorPane minWidth="-Infinity" prefHeight="503.0" prefWidth="428.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bozhik.design.controller.Start">
    <children>
-      <ListView fx:id="listViewTrack" layoutX="-1.0" layoutY="27.0" prefHeight="412.0" prefWidth="595.0" style="-fx-border-color: #FFFFFF;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0" />
-      <Button layoutX="14.0" layoutY="440.0" mnemonicParsing="false" onAction="#clickOpen" prefHeight="56.0" prefWidth="67.0" style="-fx-background-color: #00EE76;" text="+" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0">
+      <ListView fx:id="listViewTrack" layoutX="8.0" layoutY="32.0" prefHeight="394.0" prefWidth="398.0" style="-fx-border-color: #FFFFFF;" AnchorPane.bottomAnchor="77.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0" />
+      <ProgressBar fx:id="progressIndicator" layoutX="21.0" layoutY="442.0" prefHeight="18.0" prefWidth="361.0" progress="0.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="-3.0" layoutY="425.0" prefHeight="17.0" prefWidth="580.0" textAlignment="CENTER" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="3.0">
          <font>
-            <Font size="26.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <InnerShadow />
-         </effect>
-      </Button>
-      <Button layoutX="499.0" layoutY="439.0" mnemonicParsing="false" onAction="#removeTrack" prefHeight="56.0" prefWidth="67.0" style="-fx-background-color: #EE3B3B;" text="-" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="14.0">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <InnerShadow />
-         </effect>
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Button>
-      <ProgressBar fx:id="progressIndicator" layoutX="90.0" layoutY="442.0" prefHeight="18.0" prefWidth="399.0" progress="0.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="91.0" />
-      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="-3.0" layoutY="425.0" prefHeight="17.0" prefWidth="580.0" textAlignment="CENTER" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="3.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
       <StackPane layoutX="255.0" layoutY="460.0" prefHeight="44.0" prefWidth="44.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="255.0" AnchorPane.rightAnchor="298.0">
          <children>
             <ImageView fx:id="playButton" fitHeight="41.0" fitWidth="39.0" onMouseClicked="#play" pickOnBounds="true" preserveRatio="true">
@@ -67,6 +48,6 @@
             </ImageView>
          </children>
       </StackPane>
-      <TextField fx:id="session" editable="false" layoutY="-2.0" prefHeight="29.0" prefWidth="597.0" style="-fx-background-color: #FFFFFF;" text="Session : " AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0" />
+      <TextField fx:id="session" alignment="CENTER" editable="false" layoutX="5.0" layoutY="3.0" prefHeight="29.0" prefWidth="418.0" style="-fx-background-color: #FFFFFF;" text="Session : " AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="3.0" />
    </children>
 </AnchorPane>

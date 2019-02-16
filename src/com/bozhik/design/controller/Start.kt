@@ -45,6 +45,7 @@ class Start: Initializable {
 
     override fun initialize(location: URL?, resources: ResourceBundle?) {
         listViewTrack!!.items = listOfTrack
+      //  listViewTrack.style("-fx-alignment: center;")
         try {
             val r = post(Memory.register)
             Memory.session = Gson().fromJson(r.text, Session::class.java)
@@ -57,28 +58,30 @@ class Start: Initializable {
             alert.showAndWait()
             clickExit()
         }
+        clickOpen()
     }
-    @FXML
     private fun clickOpen() {
         var path:String = ""
         val directoryChooser = DirectoryChooser()
         val selectedFile =  directoryChooser.showDialog(null)
         val folder = File(selectedFile.absolutePath)
         Thread {
+            folder.listFiles().forEach { file ->
+                val name = file.name.replace(" ", "").replace("/", "")
+                        .replace("\\", "").replace("&", "").replace("-", "")
                 try {
-
-                for (file in folder.listFiles()) {
-                    println (1)
-                    println (folder.listFiles().size)
-                    listOfTrack.add(file.name)
+                    listOfTrack.add(name)
                     path = file.path.replace("\\", "/")
-                    Memory.nameList.add(file.name)
-                    post("http://localhost:14878//add?url=${Memory.session.url}&password=${Memory.session.password}&name=${file.name}")
+                    Memory.nameList.add(name)
+                    post("http://localhost:14878//add?url=${Memory.session.url}&password=${Memory.session.password}&name=${name}")
                     Memory.playList.add(MediaPlayer(Media(File(path).toURI().toString())))
+                } catch (e: URISyntaxException){
+                    val alert = Alert(Alert.AlertType.ERROR)
+                    alert.headerText = null
+                    alert.contentText = "$name has forbidden symbols"
+                    alert.showAndWait()
                 }
-                }catch (e: URISyntaxException){
-
-                }
+            }
 
         }.start()
 
@@ -154,3 +157,4 @@ class Start: Initializable {
 
 
 }
+
